@@ -51,7 +51,6 @@ public class Ghost : MonoBehaviour
         }
 
         distance = Vector3.Distance(transform.position, GameObject.FindWithTag("Player").transform.position);
-        Debug.Log(distance);
 
         if(distance < 6 && !played)
         {
