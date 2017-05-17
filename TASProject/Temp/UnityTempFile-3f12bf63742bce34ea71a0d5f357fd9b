@@ -92,6 +92,7 @@ Assets/Scripts/EnemyManager.cs
 Assets/Scripts/Ghost.cs
 Assets/Scripts/Paintball.cs
 Assets/Scripts/PaintballController.cs
+Assets/Scripts/Score_Manager.cs
 Assets/Scripts/Witch.cs
 Assets/Scripts/loadGame.cs
 Assets/SteamVR/Extras/SteamVR_GazeTracker.cs

@@ -92,7 +92,9 @@ Assets/Scripts/EnemyManager.cs
 Assets/Scripts/Ghost.cs
 Assets/Scripts/Paintball.cs
 Assets/Scripts/PaintballController.cs
+Assets/Scripts/Score_Manager.cs
 Assets/Scripts/Witch.cs
+Assets/Scripts/loadGame.cs
 Assets/SteamVR/Extras/SteamVR_GazeTracker.cs
 Assets/SteamVR/Extras/SteamVR_LaserPointer.cs
 Assets/SteamVR/Extras/SteamVR_Teleporter.cs
@@ -404,7 +406,6 @@ Assets/VRTK/Scripts/Utilities/VRTK_PolicyList.cs
 Assets/VRTK/Scripts/Utilities/VRTK_SDKManager.cs
 Assets/VRTK/Scripts/Utilities/VRTK_SharedMethods.cs
 Assets/VRTK/Scripts/Utilities/VRTK_Simulator.cs
-Assets/loadGame.cs
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\UnityScript.dll"

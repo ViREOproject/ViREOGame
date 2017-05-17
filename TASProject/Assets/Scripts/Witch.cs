@@ -19,6 +19,8 @@ public class Witch : MonoBehaviour {
     public AudioClip impact;
     AudioSource audio;
 
+    private int scoreValue = 10;
+
 
     // Use this for initialization
     void Start()
@@ -54,6 +56,7 @@ public class Witch : MonoBehaviour {
         {
             audio = this.GetComponent<AudioSource>();
             audio.PlayOneShot(impact);
+            Score_Manager.score += scoreValue;
         }
     }
 

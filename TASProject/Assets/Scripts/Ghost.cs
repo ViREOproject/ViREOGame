@@ -23,6 +23,8 @@ public class Ghost : MonoBehaviour
     float distance;
     bool played = false;
 
+    private int scoreValue = 5;
+
     // Use this for initialization
     void Start ()
     {
@@ -67,6 +69,7 @@ public class Ghost : MonoBehaviour
         if (col.gameObject.GetComponent<Paintball>())
         {
             audio.PlayOneShot(impact);
+            Score_Manager.score += scoreValue;
         }
     }
 
