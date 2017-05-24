@@ -47,6 +47,7 @@ public class PaintballController : MonoBehaviour {
     {
         Rigidbody clone = Instantiate(paintball, paintballOrigin.transform.position, paintballOrigin.transform.rotation);
         clone.velocity = transform.forward * paintballForce;
+        
         audio.Play();
     }
 

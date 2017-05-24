@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    private static int waypointCount = 6;
+    private static int waypointCount = 7;
     // put the points from unity interface
     public GameObject[] wayPointList = new GameObject[waypointCount];
 
@@ -24,44 +25,50 @@ public class Ghost : MonoBehaviour
     bool played = false;
 
     private int scoreValue = 5;
+    private bool hit;
 
     // Use this for initialization
     void Start ()
     {
-        audio = this.GetComponent<AudioSource>();
-        //Generating random x y z for the ghost
-        int ranX = Random.Range(0, 10);
-        int ranY = Random.Range(0, 5);
-        int ranZ = Random.Range(0, 10);
-
-        for (int i = 0; i < waypointCount; i++)
+        if (SceneManager.GetActiveScene().name.Equals("DevScene"))
         {
-            wayPointList[i] = GameObject.FindWithTag("WP"+i);
+            audio = this.GetComponent<AudioSource>();
+            //Generating random x y z for the ghost
+            int ranX = Random.Range(0, 10);
+            int ranY = Random.Range(0, 5);
+            int ranZ = Random.Range(0, 10);
+
+            for (int i = 0; i < waypointCount; i++)
+            {
+                wayPointList[i] = GameObject.FindWithTag("WP" + i);
+            }
+            //Debug.Log(wayPointList.Length);
+
+            hit = false;
         }
-        //Debug.Log(wayPointList.Length);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log(currentWayPoint);
-        // check if we have somewere to walk
-        if (currentWayPoint < this.wayPointList.Length)
+        if (SceneManager.GetActiveScene().name.Equals("DevScene"))
         {
-            if (targetWayPoint == null)
-                targetWayPoint = wayPointList[currentWayPoint];
-            walk();
+            //Debug.Log(currentWayPoint);
+            // check if we have somewere to walk
+            if (currentWayPoint < this.wayPointList.Length)
+            {
+                if (targetWayPoint == null)
+                    targetWayPoint = wayPointList[currentWayPoint];
+                walk();
+            }
+
+            distance = Vector3.Distance(transform.position, GameObject.FindWithTag("Player").transform.position);
+
+            if (distance < 6 && !played)
+            {
+                played = true;
+                audio.PlayOneShot(boo);
+            }
         }
-
-        distance = Vector3.Distance(transform.position, GameObject.FindWithTag("Player").transform.position);
-
-        if(distance < 6 && !played)
-        {
-            played = true;
-            audio.PlayOneShot(boo);
-        }
-
-        
-
     }
 
     void OnCollisionEnter(Collision col)
@@ -69,7 +76,15 @@ public class Ghost : MonoBehaviour
         if (col.gameObject.GetComponent<Paintball>())
         {
             audio.PlayOneShot(impact);
-            Score_Manager.score += scoreValue;
+
+            //Check to make sure that it hasn't alreay been hit
+            if (!hit)
+            {
+                //Preventing multiple hits
+                hit = true;
+                Score_Manager.score += scoreValue;
+            }
+            
         }
     }
 
@@ -77,7 +92,6 @@ public class Ghost : MonoBehaviour
     {
 
         // rotate towards the target
-        //Debug.Log(targetWayPoint.transform.position);
         Vector3 target = (GameObject.FindGameObjectWithTag("Player").transform.position - transform.position);
 
         transform.forward = Vector3.RotateTowards(transform.forward, target + new Vector3(ranX, ranY, ranZ), speed * Time.deltaTime, 0.0f);
@@ -85,8 +99,7 @@ public class Ghost : MonoBehaviour
         // move towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position + new Vector3(ranX, ranY, ranZ), speed * Time.deltaTime);
 
-
-        //Debug.Log("Waypoint " + targetWayPoint.transform.position);
+        
         if (transform.position == targetWayPoint.transform.position + new Vector3(ranX, ranY, ranZ))
         {
             //Generating a new set of random x y z coords for the ghost

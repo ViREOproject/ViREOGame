@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Witch : MonoBehaviour {
@@ -20,33 +21,45 @@ public class Witch : MonoBehaviour {
     AudioSource audio;
 
     private int scoreValue = 10;
+    private bool hit;
 
 
     // Use this for initialization
     void Start()
     {
-        //Generating random x y z for the witch
-        int ranX = Random.Range(0, 5);
-        int ranY = Random.Range(0, 10);
-        int ranZ = Random.Range(0, 5);
 
-        for (int i = 0; i < waypointCount; i++)
+        if (SceneManager.GetActiveScene().name.Equals("DevScene"))
         {
-            wayPointList[i] = GameObject.FindWithTag("WP" + i);
+            //Generating random x y z for the witch
+            int ranX = Random.Range(0, 5);
+            int ranY = Random.Range(0, 10);
+            int ranZ = Random.Range(0, 5);
+
+            for (int i = 0; i < waypointCount; i++)
+            {
+                wayPointList[i] = GameObject.FindWithTag("WP" + i);
+            }
+            //Debug.Log(wayPointList.Length);
+
+            hit = false;
         }
-        //Debug.Log(wayPointList.Length);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(currentWayPoint);
-        // check if we have somewere to walk
-        if (currentWayPoint < this.wayPointList.Length)
+        if (SceneManager.GetActiveScene().name.Equals("DevScene"))
         {
-            if (targetWayPoint == null)
-                targetWayPoint = getClosestWaypoint(wayPointList);
-            walk();
+            //Debug.Log(currentWayPoint);
+            // check if we have somewere to walk
+            if (currentWayPoint < this.wayPointList.Length)
+            {
+                if (targetWayPoint == null)
+                    targetWayPoint = wayPointList[currentWayPoint];
+                //targetWayPoint = getClosestWaypoint(wayPointList);
+                walk();
+                //Debug.Log(targetWayPoint);
+            }
         }
     }
 
@@ -56,7 +69,14 @@ public class Witch : MonoBehaviour {
         {
             audio = this.GetComponent<AudioSource>();
             audio.PlayOneShot(impact);
-            Score_Manager.score += scoreValue;
+
+            //Check to make sure that it hasn't alreay been hit
+            if(!hit)
+            {
+                Score_Manager.score += scoreValue;
+            }
+            //Preventing multiple hits
+            hit = true;
         }
     }
 
@@ -74,7 +94,8 @@ public class Witch : MonoBehaviour {
         // move towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position + new Vector3(ranX, ranY, ranZ), speed * Time.deltaTime);
 
-       
+
+        //Debug.Log("Witch"+targetWayPoint.transform.position);
         //Debug.Log("Waypoint " + targetWayPoint.transform.position);
         if (transform.position == targetWayPoint.transform.position + new Vector3(ranX, ranY, ranZ))
         {

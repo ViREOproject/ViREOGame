@@ -32,12 +32,18 @@ public class EnemyManager : MonoBehaviour {
         if (GameObject.FindGameObjectsWithTag(enemy[enemyIndex].tag).Length < 5 && enemyIndex == 0) //Ghost
         {
             Debug.Log("Ghost");
-            Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            GameObject ghost = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            //set the ghost to use the scale set in options scene
+            ghost.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getGhostScale();
+            //ghost.transform.localScale = new Vector3(200, 200, 200);
         }
         else if(GameObject.FindGameObjectsWithTag(enemy[enemyIndex].tag).Length < 3 && enemyIndex == 1) //Witch
         {
             Debug.Log("Witch");
-            Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            GameObject witch = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            //set the witch to use the scale set in options scene
+            witch.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getWitchScale();
+            //witch.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
 
         /** Limit the number of enemies on the screen

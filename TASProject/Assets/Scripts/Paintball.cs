@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Paintball : MonoBehaviour {
 
-    public Transform PaintPrefab;
+    public Transform[] PaintPrefab;
     public Material[] material;
+    //eventually this will be used to implement the selected Colour from the previous scene
+    public int selectedColour;
     Renderer rend;
+    Renderer selfRend;
 
     private readonly string GHOST = "Ghost";
     private readonly string SPHERE = "Sphere";
@@ -28,7 +31,11 @@ public class Paintball : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+
+        selectedColour = (int) GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getPaintballColour();
+        selfRend = this.GetComponent<Renderer>();
+        selfRend.enabled = true;
+        selfRend.sharedMaterial = material[selectedColour];
     }
 	
 	// Update is called once per frame
@@ -49,14 +56,14 @@ public class Paintball : MonoBehaviour {
         {
             rend = collision.gameObject.GetComponent<Renderer>();
             rend.enabled = true;
-            rend.sharedMaterial = material[0];
+            rend.sharedMaterial = material[selectedColour];
             Destroy(collision.gameObject, 3);
         }
         else if (collision.gameObject.tag.Contains(WITCH))
         {
             rend = collision.gameObject.GetComponentInChildren<Renderer>();
             rend.enabled = true;
-            rend.sharedMaterial = material[0];
+            rend.sharedMaterial = material[selectedColour];
             Destroy(collision.gameObject, 3);
         }
         else
@@ -91,7 +98,7 @@ public class Paintball : MonoBehaviour {
             if (Physics.Raycast(location, fwd, out hit, SplashRange))
             {
                 // Create a splash if we found a surface
-                var paintSplatter = GameObject.Instantiate(PaintPrefab,
+                var paintSplatter = GameObject.Instantiate(PaintPrefab[selectedColour],
                                                            hit.point,
 
                                                            // Rotation from the original sprite to the normal
@@ -134,7 +141,7 @@ public class Paintball : MonoBehaviour {
         if (Physics.Raycast(location, fwd, out hit, SplashRange))
         {
             // Create a splash if we found a surface
-            var paintSplatter = GameObject.Instantiate(PaintPrefab,hit.point,
+            var paintSplatter = GameObject.Instantiate(PaintPrefab[selectedColour],hit.point,
                                                            // Rotation from the original sprite to the normal
                                                            // Prefab are currently oriented to z+ so we use the opposite
                                                            Quaternion.FromToRotation(Vector3.back, hit.normal)
