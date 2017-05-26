@@ -16,8 +16,6 @@ public class loadGame : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P))
         {
             // these lines are for testing purposes
-            // save paintball colour
-            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setPaintballColour(Settings.PaintballColour.Pink);
             // save ghost size
             GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setGhostScale(GameObject.FindGameObjectWithTag("Ghost").transform.localScale);
             // save witch size

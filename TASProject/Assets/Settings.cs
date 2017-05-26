@@ -18,7 +18,7 @@ public class Settings : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
         //set default colour
-        setPaintballColour(PaintballColour.Black);
+        setPaintballColour(0);
 	}
 	
 	// Update is called once per frame
@@ -47,9 +47,9 @@ public class Settings : MonoBehaviour {
         return witchScale;
     }
 
-    public void setPaintballColour(PaintballColour c)
+    public void setPaintballColour(int c)
     {
-        colour = c;
+        this.colour = (PaintballColour) c;
     }
 
     public PaintballColour getPaintballColour()
@@ -63,6 +63,6 @@ public class Settings : MonoBehaviour {
         Black = 0,
         Purple = 1,
         Orange = 2,
-        Pink = 3
+        Pink = 3,
     };
 }

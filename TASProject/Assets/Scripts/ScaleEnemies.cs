@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScaleEnemies: MonoBehaviour {
 
     public GameObject[] paintSplatters;
-    int paintIndex = 0;
+    public static int paintIndex = 0;
     public static GameObject paintSplatter;
     // Use this for initialization
     void Start () {
@@ -79,8 +79,33 @@ public class ScaleEnemies: MonoBehaviour {
         }
         else if(OptionsBtnPush.sc != null && OptionsBtnPush.sc.currentSetting.Equals("paintColour"))
         {
-            
+
+            if (paintIndex > 0)
+            {
+                //First click
+                if (paintSplatter == null)
+                {
+                    paintIndex--;
+                    paintSplatter = Instantiate(paintSplatters[paintIndex], new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
+                }
+                else if (paintSplatter != null)
+                {
+                    paintIndex--;
+                    DestroyImmediate(paintSplatter);
+                    paintSplatter = Instantiate(paintSplatters[paintIndex], new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
+
+                }
+            }
+            else
+            {
+                
+                DestroyImmediate(paintSplatter);
+                paintIndex = paintSplatters.Length-1;
+                paintSplatter = Instantiate(paintSplatters[paintIndex], new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
+            }
         }
         
     }
+    //need this to save settings
+    public int getPaintIndex(){return paintIndex;}
 }

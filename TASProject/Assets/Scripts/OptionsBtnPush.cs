@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OptionsBtnPush: MonoBehaviour {
+public class OptionsBtnPush : MonoBehaviour {
 
     //SettingsController object. This is where the currentSetting and settings variables exist.
     //We should use this for any other settings management in the options scene
@@ -23,6 +23,11 @@ public class OptionsBtnPush: MonoBehaviour {
         //scale setting
         if (sc.currentSetting.Equals(sc.settings[0]))
         {
+            // save ghost size
+            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setGhostScale(GameObject.FindGameObjectWithTag("Ghost").transform.localScale);
+            // save witch size
+            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setWitchScale(GameObject.FindGameObjectWithTag("Witch").transform.localScale);
+
             //Move the enemies out of view
             GameObject.FindGameObjectWithTag("Witch").transform.position += new Vector3(30,0,0);
             GameObject.FindGameObjectWithTag("Ghost").transform.position += new Vector3(30, 0, 0);
@@ -37,6 +42,8 @@ public class OptionsBtnPush: MonoBehaviour {
         else if(sc.currentSetting.Equals(sc.settings[1]))
         {
             
+            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setPaintballColour(ScaleEnemies.paintIndex);
+            SteamVR_LoadLevel.Begin("DevScene");
         }
     }
 
@@ -53,6 +60,8 @@ public class OptionsBtnPush: MonoBehaviour {
             //Move the enemies into of view
             GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(30, 0, 0);
             GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(30, 0, 0);
+
+            DestroyImmediate(GameObject.FindGameObjectWithTag("PaintSplatter"));
 
             Debug.Log("Previous: paint colour");
             sc.currentSetting = sc.settings[0];
