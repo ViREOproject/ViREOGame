@@ -6,7 +6,8 @@ public class OptionsBtnPush: MonoBehaviour {
 
     //SettingsController object. This is where the currentSetting and settings variables exist.
     //We should use this for any other settings management in the options scene
-    SettingsController sc;
+    public static SettingsController sc;
+    public GameObject paintSplatter;
 	// Use this for initialization
 	void Start () {
         sc = new SettingsController();    
@@ -25,15 +26,17 @@ public class OptionsBtnPush: MonoBehaviour {
             //Move the enemies out of view
             GameObject.FindGameObjectWithTag("Witch").transform.position += new Vector3(30,0,0);
             GameObject.FindGameObjectWithTag("Ghost").transform.position += new Vector3(30, 0, 0);
-            //This doesn't work to disable the scaling script. We need to find some other way to disable the scaling script
-            GetComponent<ScaleEnemies>().enabled = false;
+
+            //Instantiate a paint splatter
+            ScaleEnemies.paintSplatter = Instantiate(paintSplatter, new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
 
             //Update currentSetting last
             sc.currentSetting = sc.settings[1];
+
         }
         else if(sc.currentSetting.Equals(sc.settings[1]))
         {
-
+            
         }
     }
 
@@ -50,8 +53,7 @@ public class OptionsBtnPush: MonoBehaviour {
             //Move the enemies into of view
             GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(30, 0, 0);
             GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(30, 0, 0);
-            //This doesn't work to enable the script. We need to find some other way to enable the scaling
-            GetComponent<ScaleEnemies>().enabled = true;
+
             Debug.Log("Previous: paint colour");
             sc.currentSetting = sc.settings[0];
         }

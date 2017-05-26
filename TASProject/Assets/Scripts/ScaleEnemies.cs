@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ScaleEnemies: MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject[] paintSplatters;
+    int paintIndex = 0;
+    public static GameObject paintSplatter;
+    // Use this for initialization
+    void Start () {
         
 	}
 	
@@ -17,28 +20,67 @@ public class ScaleEnemies: MonoBehaviour {
     //increase size button 
     public void btn1 ()
     {
-        if (GameObject.FindGameObjectWithTag("Ghost").transform.localScale.y < 94)
+        if (OptionsBtnPush.sc != null && OptionsBtnPush.sc.currentSetting.Equals("scale"))
         {
-            GameObject.FindGameObjectWithTag("Ghost").transform.localScale += new Vector3(10, 10, 10);
-           
-        }
+            if (GameObject.FindGameObjectWithTag("Ghost").transform.localScale.y < 94)
+            {
+                GameObject.FindGameObjectWithTag("Ghost").transform.localScale += new Vector3(10, 10, 10);
 
-        if (GameObject.FindGameObjectWithTag("Witch").transform.localScale.y < 0.5)
+            }
+
+            if (GameObject.FindGameObjectWithTag("Witch").transform.localScale.y < 0.5)
+            {
+                GameObject.FindGameObjectWithTag("Witch").transform.localScale += new Vector3(.05f, .05f, .05f);
+            }
+        }
+        else if (OptionsBtnPush.sc != null && OptionsBtnPush.sc.currentSetting.Equals("paintColour"))
         {
-            GameObject.FindGameObjectWithTag("Witch").transform.localScale += new Vector3(.05f, .05f, .05f);
+            if (paintIndex < paintSplatters.Length-1)
+            {
+                //First click
+                if (paintSplatter == null)
+                {
+                    paintIndex++;
+                    paintSplatter = Instantiate(paintSplatters[paintIndex], new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
+                }
+                else if(paintSplatter!=null)
+                {
+                    paintIndex++;
+                    DestroyImmediate(paintSplatter);
+                    paintSplatter = Instantiate(paintSplatters[paintIndex], new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
+                    
+                }
+            }
+            else
+            {
+                //paintIndex++;
+                DestroyImmediate(paintSplatter);
+                paintIndex = 0;
+                paintSplatter = Instantiate(paintSplatters[paintIndex], new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
+
+            }
+            
         }
     }
     //decrease size button
     public void btn0()
     {
-        if (GameObject.FindGameObjectWithTag("Ghost").transform.localScale.y > 35)
+        if (OptionsBtnPush.sc != null && OptionsBtnPush.sc.currentSetting.Equals("scale"))
         {
-            GameObject.FindGameObjectWithTag("Ghost").transform.localScale -= new Vector3(10, 10, 10);
-        }
+            if (GameObject.FindGameObjectWithTag("Ghost").transform.localScale.y > 35)
+            {
+                GameObject.FindGameObjectWithTag("Ghost").transform.localScale -= new Vector3(10, 10, 10);
+            }
 
-        if (GameObject.FindGameObjectWithTag("Witch").transform.localScale.y > 0.24)
-        { 
-            GameObject.FindGameObjectWithTag("Witch").transform.localScale -= new Vector3(.05f, .05f, .05f);
+            if (GameObject.FindGameObjectWithTag("Witch").transform.localScale.y > 0.24)
+            {
+                GameObject.FindGameObjectWithTag("Witch").transform.localScale -= new Vector3(.05f, .05f, .05f);
+            }
         }
+        else if(OptionsBtnPush.sc != null && OptionsBtnPush.sc.currentSetting.Equals("paintColour"))
+        {
+            
+        }
+        
     }
 }
