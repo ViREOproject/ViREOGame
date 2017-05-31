@@ -21,7 +21,7 @@ Platform assembly: C:\Users\BISAdmin\Documents\ViREOGame\TASProject\test_Data\Ma
 Loading C:\Users\BISAdmin\Documents\ViREOGame\TASProject\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: C:\Users\BISAdmin\Documents\ViREOGame\TASProject\test_Data\Managed\UnityEngine.VR.dll (this message is harmless)
 Loading C:\Users\BISAdmin\Documents\ViREOGame\TASProject\test_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.165 seconds
+- Completed reload, in  0.214 seconds
 Platform assembly: C:\Users\BISAdmin\Documents\ViREOGame\TASProject\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\BISAdmin\Documents\ViREOGame\TASProject\test_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
@@ -45,13 +45,13 @@ Did you #ifdef UNITY_EDITOR a section of your serialized properties in any of yo
  
 (Filename:  Line: 1820)
 
-UnloadTime: 0.641924 ms
+UnloadTime: 0.610807 ms
 Connected to lighthouse:LHR-1FA37480
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 5034 -> priority: 1 
+  Thread -> id: 1dc0 -> priority: 1 
 The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1526)
@@ -79,16 +79,12 @@ Did you #ifdef UNITY_EDITOR a section of your serialized properties in any of yo
 (Filename:  Line: 1820)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.882988 ms
+UnloadTime: 3.632441 ms
 
-Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 1339.
-Total: 1.375599 ms (FindLiveObjects: 0.062235 ms CreateObjectMapping: 0.032721 ms MarkObjects: 0.523548 ms  DeleteObjects: 0.753884 ms)
+Unloading 82 unused Assets to reduce memory usage. Loaded Objects now: 1235.
+Total: 1.884712 ms (FindLiveObjects: 0.184461 ms CreateObjectMapping: 0.042666 ms MarkObjects: 0.501092 ms  DeleteObjects: 1.152320 ms)
 
-Shader warmup: 40 shaders 889 combinations 0.866s
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+Shader warmup: 40 shaders 889 combinations 0.120s
 Witch
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -140,58 +136,6 @@ The referenced script on this Behaviour (Game Object 'WitchPrefab') is missing!
 The referenced script on this Behaviour (Game Object 'WitchPrefab') is missing!
  
 (Filename:  Line: 1754)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Witch
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1526)
-
-The referenced script on this Behaviour (Game Object 'WitchPrefab') is missing!
- 
-(Filename:  Line: 1754)
-
-The referenced script on this Behaviour (Game Object 'WitchPrefab') is missing!
- 
-(Filename:  Line: 1754)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Ghost
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 OpenVR Shutdown
  
