@@ -8,10 +8,15 @@ public class OptionsBtnPush : MonoBehaviour {
     //We should use this for any other settings management in the options scene
     public static SettingsController sc;
     public GameObject paintSplatter;
-	// Use this for initialization
-	void Start () {
-        sc = new SettingsController();    
-	}
+    public AudioManager am;
+
+    // Use this for initialization
+    void Start () {
+        sc = new SettingsController();
+
+        //Audio Manager from the Audio Manager game object. This is used to change the current track
+        am = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,8 +34,8 @@ public class OptionsBtnPush : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setWitchScale(GameObject.FindGameObjectWithTag("Witch").transform.localScale);
 
             //Move the enemies out of view
-            GameObject.FindGameObjectWithTag("Witch").transform.position += new Vector3(30,0,0);
-            GameObject.FindGameObjectWithTag("Ghost").transform.position += new Vector3(30, 0, 0);
+            GameObject.FindGameObjectWithTag("Witch").transform.position += new Vector3(50,0,0);
+            GameObject.FindGameObjectWithTag("Ghost").transform.position += new Vector3(50, 0, 0);
 
             //Instantiate a paint splatter
             ScaleEnemies.paintSplatter = Instantiate(paintSplatter, new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
@@ -38,10 +43,18 @@ public class OptionsBtnPush : MonoBehaviour {
             //Update currentSetting last
             sc.currentSetting = sc.settings[1];
 
+            am.playSpecificTrack(2);
         }
         else if(sc.currentSetting.Equals(sc.settings[1]))
         {
-            
+            am.audioSource.Stop();
+            am.playSpecificTrack(3);
+            //Update currentSetting last
+            sc.currentSetting = sc.settings[2];
+        }
+        else if(sc.currentSetting.Equals(sc.settings[2]))
+        {
+            am.audioSource.Stop();
             GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setPaintballColour(ScaleEnemies.paintIndex);
             SteamVR_LoadLevel.Begin("DevScene");
         }
@@ -58,13 +71,17 @@ public class OptionsBtnPush : MonoBehaviour {
         else if (sc.currentSetting.Equals(sc.settings[1]))
         {
             //Move the enemies into of view
-            GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(30, 0, 0);
-            GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(30, 0, 0);
+            GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(50, 0, 0);
+            GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(50, 0, 0);
 
             DestroyImmediate(GameObject.FindGameObjectWithTag("PaintSplatter"));
 
             Debug.Log("Previous: paint colour");
             sc.currentSetting = sc.settings[0];
+        }
+        else if(sc.currentSetting.Equals(sc.settings[2]))
+        {
+
         }
     }
 }

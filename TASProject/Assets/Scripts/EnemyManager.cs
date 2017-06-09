@@ -27,14 +27,22 @@ public class EnemyManager : MonoBehaviour {
         int enemyIndex = Random.Range(0, enemy.Length);
 
         /** Limit the number of enemies on the screen
-         *  Allows for 5 Ghosts and 3 Witches
+         *  Allows for 
+         *  5 Ghosts
+         *  3 Witches
+         *  3 Skeletons
          */
         if (GameObject.FindGameObjectsWithTag(enemy[enemyIndex].tag).Length < 5 && enemyIndex == 0) //Ghost
         {
             Debug.Log("Ghost");
             GameObject ghost = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
             //set the ghost to use the scale set in options scene
-            ghost.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getGhostScale();
+
+            //Make sure that the settings object isn't null
+            if (GameObject.FindGameObjectWithTag("Settings") != null)
+            {
+                ghost.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getGhostScale();
+            }
             //ghost.transform.localScale = new Vector3(200, 200, 200);
         }
         else if(GameObject.FindGameObjectsWithTag(enemy[enemyIndex].tag).Length < 3 && enemyIndex == 1) //Witch
@@ -42,10 +50,25 @@ public class EnemyManager : MonoBehaviour {
             Debug.Log("Witch");
             GameObject witch = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
             //set the witch to use the scale set in options scene
-            witch.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getWitchScale();
+            //Make sure that the settings object isn't null
+            if (GameObject.FindGameObjectWithTag("Settings") != null)
+            {
+                witch.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getWitchScale();
+            }
             //witch.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
-
+        else if (GameObject.FindGameObjectsWithTag(enemy[enemyIndex].tag).Length < 3 && enemyIndex == 2) //Skeleton
+        {
+            Debug.Log("Skeleton");
+            GameObject skeleton = Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            //set the witch to use the scale set in options scene
+            //Make sure that the settings object isn't null
+            if (GameObject.FindGameObjectWithTag("Settings") != null)
+            {
+                skeleton.transform.localScale = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getGhostScale();
+            }
+            //witch.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
         /** Limit the number of enemies on the screen
          *  Allows for 5 Ghosts and 5 Witches
          */
@@ -53,6 +76,6 @@ public class EnemyManager : MonoBehaviour {
         //{
         //    Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         //}
-        
+
     }
 }

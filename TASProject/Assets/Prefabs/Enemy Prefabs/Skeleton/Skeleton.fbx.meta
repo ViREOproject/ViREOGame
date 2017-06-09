@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: 9df37035d65a7e743a20f441cf92a18b
+timeCreated: 1496423205
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm.L
+    100002: Arm.L_end
+    100004: Arm.R
+    100006: Arm.R_end
+    100008: Body
+    100010: Head
+    100012: Head_end
+    100014: LeftFemur
+    100016: LeftFoot
+    100018: LeftHand
+    100020: LeftHumerus
+    100022: LeftRadius
+    100024: LeftTibia
+    100026: Leg.L
+    100028: Leg.L_end
+    100030: Leg.R
+    100032: Leg.R_end
+    100034: Pelvis
+    100036: Rib1
+    100038: Rib2
+    100040: Rib3
+    100042: Rib4
+    100044: Rib5
+    100046: RightFemur
+    100048: RightFoot
+    100050: RightHand
+    100052: RightHumerus
+    100054: RightRadius
+    100056: RightTibia
+    100058: //RootNode
+    100060: Skull
+    400000: Arm.L
+    400002: Arm.L_end
+    400004: Arm.R
+    400006: Arm.R_end
+    400008: Body
+    400010: Head
+    400012: Head_end
+    400014: LeftFemur
+    400016: LeftFoot
+    400018: LeftHand
+    400020: LeftHumerus
+    400022: LeftRadius
+    400024: LeftTibia
+    400026: Leg.L
+    400028: Leg.L_end
+    400030: Leg.R
+    400032: Leg.R_end
+    400034: Pelvis
+    400036: Rib1
+    400038: Rib2
+    400040: Rib3
+    400042: Rib4
+    400044: Rib5
+    400046: RightFemur
+    400048: RightFoot
+    400050: RightHand
+    400052: RightHumerus
+    400054: RightRadius
+    400056: RightTibia
+    400058: //RootNode
+    400060: Skull
+    2300000: LeftFemur
+    2300002: LeftFoot
+    2300004: LeftHand
+    2300006: LeftHumerus
+    2300008: LeftRadius
+    2300010: LeftTibia
+    2300012: Pelvis
+    2300014: Rib1
+    2300016: Rib2
+    2300018: Rib3
+    2300020: Rib4
+    2300022: Rib5
+    2300024: RightFemur
+    2300026: RightFoot
+    2300028: RightHand
+    2300030: RightHumerus
+    2300032: RightRadius
+    2300034: RightTibia
+    3300000: LeftFemur
+    3300002: LeftFoot
+    3300004: LeftHand
+    3300006: LeftHumerus
+    3300008: LeftRadius
+    3300010: LeftTibia
+    3300012: Pelvis
+    3300014: Rib1
+    3300016: Rib2
+    3300018: Rib3
+    3300020: Rib4
+    3300022: Rib5
+    3300024: RightFemur
+    3300026: RightFoot
+    3300028: RightHand
+    3300030: RightHumerus
+    3300032: RightRadius
+    3300034: RightTibia
+    4300000: Rib1
+    4300002: Rib4
+    4300004: Rib3
+    4300006: Rib2
+    4300008: Rib5
+    4300010: Pelvis
+    4300012: Skull
+    4300014: LeftHumerus
+    4300016: LeftRadius
+    4300018: LeftHand
+    4300020: LeftFemur
+    4300022: LeftTibia
+    4300024: LeftFoot
+    4300026: RightHumerus
+    4300028: RightRadius
+    4300030: RightHand
+    4300032: RightFemur
+    4300034: RightTibia
+    4300036: RightFoot
+    7400000: Armature|ArmatureAction.001
+    7400002: Armature|WalkBlocking
+    7400004: Pelvis|WalkBlocking
+    9500000: //RootNode
+    13700000: Skull
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

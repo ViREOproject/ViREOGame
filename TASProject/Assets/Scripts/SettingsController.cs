@@ -14,6 +14,7 @@ public class SettingsController {
     {
         settings.Add("scale");
         settings.Add("paintColour");
+        settings.Add("outro");
         currentSetting = settings[0];
     }
 }

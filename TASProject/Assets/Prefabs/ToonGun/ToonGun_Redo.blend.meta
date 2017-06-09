@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: ca6382b7e93cd3942bc04ec1897afc26
+timeCreated: 1496423236
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BarrellOrb_000
+    100002: BarrellOrb_001
+    100004: BarrellOrb_002
+    100006: BarrellOrb_003
+    100008: BarrellOrb_004
+    100010: BarrellOrb_005
+    100012: BodyRivet_000
+    100014: BodyRivet_001
+    100016: BodyRivet_002
+    100018: BodyRivet_003
+    100020: Cube_001
+    100022: GunBarrel
+    100024: GunBody
+    100026: Handle
+    100028: //RootNode
+    100030: Torus
+    100032: Torus_001
+    100034: Torus_002
+    400000: BarrellOrb_000
+    400002: BarrellOrb_001
+    400004: BarrellOrb_002
+    400006: BarrellOrb_003
+    400008: BarrellOrb_004
+    400010: BarrellOrb_005
+    400012: BodyRivet_000
+    400014: BodyRivet_001
+    400016: BodyRivet_002
+    400018: BodyRivet_003
+    400020: Cube_001
+    400022: GunBarrel
+    400024: GunBody
+    400026: Handle
+    400028: //RootNode
+    400030: Torus
+    400032: Torus_001
+    400034: Torus_002
+    2300000: BarrellOrb_000
+    2300002: BarrellOrb_001
+    2300004: BarrellOrb_002
+    2300006: BarrellOrb_003
+    2300008: BarrellOrb_004
+    2300010: BarrellOrb_005
+    2300012: BodyRivet_000
+    2300014: BodyRivet_001
+    2300016: BodyRivet_002
+    2300018: BodyRivet_003
+    2300020: Cube_001
+    2300022: GunBarrel
+    2300024: GunBody
+    2300026: Handle
+    2300028: Torus
+    2300030: Torus_001
+    2300032: Torus_002
+    3300000: BarrellOrb_000
+    3300002: BarrellOrb_001
+    3300004: BarrellOrb_002
+    3300006: BarrellOrb_003
+    3300008: BarrellOrb_004
+    3300010: BarrellOrb_005
+    3300012: BodyRivet_000
+    3300014: BodyRivet_001
+    3300016: BodyRivet_002
+    3300018: BodyRivet_003
+    3300020: Cube_001
+    3300022: GunBarrel
+    3300024: GunBody
+    3300026: Handle
+    3300028: Torus
+    3300030: Torus_001
+    3300032: Torus_002
+    4300000: Cube_001
+    4300002: Handle
+    4300004: GunBody
+    4300006: BodyRivet_003
+    4300008: BodyRivet_000
+    4300010: BodyRivet_001
+    4300012: BodyRivet_002
+    4300014: GunBarrel
+    4300016: Torus_002
+    4300018: Torus_001
+    4300020: Torus
+    4300022: BarrellOrb_000
+    4300024: BarrellOrb_005
+    4300026: BarrellOrb_004
+    4300028: BarrellOrb_003
+    4300030: BarrellOrb_001
+    4300032: BarrellOrb_002
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

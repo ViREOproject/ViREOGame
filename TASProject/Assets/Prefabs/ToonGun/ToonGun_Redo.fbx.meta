@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: cdbc767fdef55014aa27d14f036c61a8
+timeCreated: 1496423248
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BarrellOrb.000
+    100002: BarrellOrb.001
+    100004: BarrellOrb.002
+    100006: BarrellOrb.003
+    100008: BarrellOrb.004
+    100010: BarrellOrb.005
+    100012: BodyRivet.000
+    100014: BodyRivet.001
+    100016: BodyRivet.002
+    100018: BodyRivet.003
+    100020: Cube.001
+    100022: GunBarrel
+    100024: GunBody
+    100026: Handle
+    100028: //RootNode
+    100030: Torus
+    100032: Torus.001
+    100034: Torus.002
+    400000: BarrellOrb.000
+    400002: BarrellOrb.001
+    400004: BarrellOrb.002
+    400006: BarrellOrb.003
+    400008: BarrellOrb.004
+    400010: BarrellOrb.005
+    400012: BodyRivet.000
+    400014: BodyRivet.001
+    400016: BodyRivet.002
+    400018: BodyRivet.003
+    400020: Cube.001
+    400022: GunBarrel
+    400024: GunBody
+    400026: Handle
+    400028: //RootNode
+    400030: Torus
+    400032: Torus.001
+    400034: Torus.002
+    2300000: BarrellOrb.000
+    2300002: BarrellOrb.001
+    2300004: BarrellOrb.002
+    2300006: BarrellOrb.003
+    2300008: BarrellOrb.004
+    2300010: BarrellOrb.005
+    2300012: BodyRivet.000
+    2300014: BodyRivet.001
+    2300016: BodyRivet.002
+    2300018: BodyRivet.003
+    2300020: Cube.001
+    2300022: GunBarrel
+    2300024: GunBody
+    2300026: Handle
+    2300028: Torus
+    2300030: Torus.001
+    2300032: Torus.002
+    3300000: BarrellOrb.000
+    3300002: BarrellOrb.001
+    3300004: BarrellOrb.002
+    3300006: BarrellOrb.003
+    3300008: BarrellOrb.004
+    3300010: BarrellOrb.005
+    3300012: BodyRivet.000
+    3300014: BodyRivet.001
+    3300016: BodyRivet.002
+    3300018: BodyRivet.003
+    3300020: Cube.001
+    3300022: GunBarrel
+    3300024: GunBody
+    3300026: Handle
+    3300028: Torus
+    3300030: Torus.001
+    3300032: Torus.002
+    4300000: Cube.001
+    4300002: Handle
+    4300004: GunBody
+    4300006: BodyRivet.003
+    4300008: BodyRivet.000
+    4300010: BodyRivet.001
+    4300012: BodyRivet.002
+    4300014: GunBarrel
+    4300016: Torus.002
+    4300018: Torus.001
+    4300020: Torus
+    4300022: BarrellOrb.000
+    4300024: BarrellOrb.005
+    4300026: BarrellOrb.004
+    4300028: BarrellOrb.003
+    4300030: BarrellOrb.001
+    4300032: BarrellOrb.002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

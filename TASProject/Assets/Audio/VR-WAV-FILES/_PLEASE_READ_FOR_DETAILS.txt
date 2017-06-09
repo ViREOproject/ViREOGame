@@ -1,0 +1,50 @@
+Order of audio clips by scene
+
+----------------------------
+Options Screen:
+
+1- intro
+2- controller
+3- buttons
+
+4- scalingleft
+5- scalingright
+6- goback
+(the above three clips are combined in enemyscalingfulllength)
+
+7- paintcolour
+8- paintcolourcontinue
+(the above two clips are combined in paintcolourfulllength)
+
+9- startthegame
+
+----------------------------
+Game Screen:
+
+1- gameintro
+2- go
+
+----------------------------
+Game Screen audio clips:
+
+1minuteleft
+30secondsleft
+10secondsleft
+timeisup
+
+20points
+40points
+50points
+60points
+80points
+100points
+150points
+200points
+250points
+300points
+350points
+400points
+
+keepitup
+nicehit
+goodjob

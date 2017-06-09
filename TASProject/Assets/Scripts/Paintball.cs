@@ -15,6 +15,7 @@ public class Paintball : MonoBehaviour {
     private readonly string SPHERE = "Sphere";
     private readonly string CUBE = "Cube";
     private readonly string WITCH = "Witch";
+    private readonly string SKELETON = "Skeleton";
 
  
 
@@ -50,7 +51,7 @@ public class Paintball : MonoBehaviour {
         ContactPoint contact = collision.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
-        
+
         if (collision.gameObject.tag.Contains(GHOST) || collision.gameObject.tag.Contains(CUBE) ||
             collision.gameObject.tag.Contains(SPHERE))
         {
@@ -73,10 +74,24 @@ public class Paintball : MonoBehaviour {
                     r.sharedMaterial = material[selectedColour];
                 }
             }
-            rend = collision.gameObject.GetComponentInChildren<Renderer>();
-            rend.enabled = true;
-            rend.sharedMaterial = material[selectedColour];
-            //Destroy(collision.gameObject, 1);
+            Destroy(collision.gameObject, 1);
+        }
+        else if(collision.gameObject.tag.Contains(SKELETON))
+        {
+            //Grab all the Renderers
+            Renderer[] rends = collision.gameObject.GetComponentsInChildren<Renderer>();
+            //Loop over all of them
+            foreach (Renderer r in rends)
+            {
+                
+                //Make sure that the renderer has a parent object
+                if (r.gameObject.transform.parent != null)
+                {
+                    r.enabled = true;
+                    r.sharedMaterial = material[selectedColour];
+                }
+            }
+            Destroy(collision.gameObject, 1);
         }
         else
         {

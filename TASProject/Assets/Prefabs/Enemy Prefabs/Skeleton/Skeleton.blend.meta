@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: a92d0e88b0d0866408193adfeb8c5ecb
+timeCreated: 1496423208
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Armature
+    100006: Body
+    100008: Head
+    100010: LeftFemur
+    100012: LeftFoot
+    100014: LeftHand
+    100016: LeftHumerus
+    100018: LeftRadius
+    100020: LeftTibia
+    100022: Leg_L
+    100024: Leg_R
+    100026: Pelvis
+    100028: Rib1
+    100030: Rib2
+    100032: Rib3
+    100034: Rib4
+    100036: Rib5
+    100038: RightFemur
+    100040: RightFoot
+    100042: RightHand
+    100044: RightHumerus
+    100046: RightRadius
+    100048: RightTibia
+    100050: //RootNode
+    100052: Skull
+    400000: Arm_L
+    400002: Arm_R
+    400004: Armature
+    400006: Body
+    400008: Head
+    400010: LeftFemur
+    400012: LeftFoot
+    400014: LeftHand
+    400016: LeftHumerus
+    400018: LeftRadius
+    400020: LeftTibia
+    400022: Leg_L
+    400024: Leg_R
+    400026: Pelvis
+    400028: Rib1
+    400030: Rib2
+    400032: Rib3
+    400034: Rib4
+    400036: Rib5
+    400038: RightFemur
+    400040: RightFoot
+    400042: RightHand
+    400044: RightHumerus
+    400046: RightRadius
+    400048: RightTibia
+    400050: //RootNode
+    400052: Skull
+    4300000: RightHumerus
+    4300002: RightRadius
+    4300004: RightHand
+    4300006: LeftHumerus
+    4300008: LeftRadius
+    4300010: LeftHand
+    4300012: Rib1
+    4300014: Skull
+    4300016: Rib4
+    4300018: Rib3
+    4300020: Rib2
+    4300022: Rib5
+    4300024: Pelvis
+    4300026: LeftFemur
+    4300028: LeftTibia
+    4300030: LeftFoot
+    4300032: RightFemur
+    4300034: RightTibia
+    4300036: RightFoot
+    7400000: Default Take
+    7400002: ArmatureAction_001
+    9500000: //RootNode
+    13700000: LeftFemur
+    13700002: LeftFoot
+    13700004: LeftHand
+    13700006: LeftHumerus
+    13700008: LeftRadius
+    13700010: LeftTibia
+    13700012: Pelvis
+    13700014: Rib1
+    13700016: Rib2
+    13700018: Rib3
+    13700020: Rib4
+    13700022: Rib5
+    13700024: RightFemur
+    13700026: RightFoot
+    13700028: RightHand
+    13700030: RightHumerus
+    13700032: RightRadius
+    13700034: RightTibia
+    13700036: Skull
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body
+        weight: 1
+      - path: Armature/Body/Arm_L
+        weight: 1
+      - path: Armature/Body/Arm_R
+        weight: 1
+      - path: Armature/Body/Head
+        weight: 1
+      - path: Armature/Body/Leg_L
+        weight: 1
+      - path: Armature/Body/Leg_R
+        weight: 1
+      - path: LeftFemur
+        weight: 1
+      - path: LeftFoot
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftHumerus
+        weight: 1
+      - path: LeftRadius
+        weight: 1
+      - path: LeftTibia
+        weight: 1
+      - path: Pelvis
+        weight: 1
+      - path: Rib1
+        weight: 1
+      - path: Rib2
+        weight: 1
+      - path: Rib3
+        weight: 1
+      - path: Rib4
+        weight: 1
+      - path: Rib5
+        weight: 1
+      - path: RightFemur
+        weight: 1
+      - path: RightFoot
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightHumerus
+        weight: 1
+      - path: RightRadius
+        weight: 1
+      - path: RightTibia
+        weight: 1
+      - path: Skull
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ArmatureAction_001
+      takeName: ArmatureAction_001
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Body
+        weight: 1
+      - path: Armature/Body/Arm_L
+        weight: 1
+      - path: Armature/Body/Arm_R
+        weight: 1
+      - path: Armature/Body/Head
+        weight: 1
+      - path: Armature/Body/Leg_L
+        weight: 1
+      - path: Armature/Body/Leg_R
+        weight: 1
+      - path: LeftFemur
+        weight: 1
+      - path: LeftFoot
+        weight: 1
+      - path: LeftHand
+        weight: 1
+      - path: LeftHumerus
+        weight: 1
+      - path: LeftRadius
+        weight: 1
+      - path: LeftTibia
+        weight: 1
+      - path: Pelvis
+        weight: 1
+      - path: Rib1
+        weight: 1
+      - path: Rib2
+        weight: 1
+      - path: Rib3
+        weight: 1
+      - path: Rib4
+        weight: 1
+      - path: Rib5
+        weight: 1
+      - path: RightFemur
+        weight: 1
+      - path: RightFoot
+        weight: 1
+      - path: RightHand
+        weight: 1
+      - path: RightHumerus
+        weight: 1
+      - path: RightRadius
+        weight: 1
+      - path: RightTibia
+        weight: 1
+      - path: Skull
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
