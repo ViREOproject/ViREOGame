@@ -9,6 +9,7 @@ public class OptionsBtnPush : MonoBehaviour {
     public static SettingsController sc;
     public GameObject paintSplatter;
     public AudioManager am;
+    public GameObject leverPrefab;
 
     // Use this for initialization
     void Start () {
@@ -47,16 +48,36 @@ public class OptionsBtnPush : MonoBehaviour {
         }
         else if(sc.currentSetting.Equals(sc.settings[1]))
         {
+            //save paint colour
+            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setPaintballColour(ScaleEnemies.paintIndex);
+
+            //instantiate lever in front of player
+            //and play audio cue to pull lever to start the game
             am.audioSource.Stop();
             am.playSpecificTrack(3);
+            Instantiate(leverPrefab);
+
+            //move button cylinders out of view
+            //(I didn't get the following working, the actual button component wouldn't move. This is
+            // due to it being a configurable joint and locked in the X motion. I am able to alter this
+            // setting in the inspector window during play. However, pre-setting this setting doesn't
+            // seem to work.)
+
+            //GameObject.FindGameObjectWithTag("BackButtonStand").transform.position += new Vector3(40, 0, 0);
+            //GameObject.FindGameObjectWithTag("NextButtonStand").transform.position += new Vector3(40, 0, 0);
+            //GameObject.FindGameObjectWithTag("BackButton").transform.position += new Vector3(40, 0, 0);
+            //GameObject.FindGameObjectWithTag("NextButton").transform.position += new Vector3(40, 0, 0);
+
+            //for now, will destroy cylinders instead
+            Destroy(GameObject.FindGameObjectWithTag("BackButtonStand"));
+            Destroy(GameObject.FindGameObjectWithTag("NextButtonStand"));
+
             //Update currentSetting last
             sc.currentSetting = sc.settings[2];
         }
         else if(sc.currentSetting.Equals(sc.settings[2]))
         {
-            am.audioSource.Stop();
-            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setPaintballColour(ScaleEnemies.paintIndex);
-            SteamVR_LoadLevel.Begin("DevScene");
+          
         }
     }
 
@@ -70,6 +91,8 @@ public class OptionsBtnPush : MonoBehaviour {
         //Paint Colour setting
         else if (sc.currentSetting.Equals(sc.settings[1]))
         {
+            am.audioSource.Stop();
+            am.playSpecificTrack(1);
             //Move the enemies into of view
             GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(50, 0, 0);
             GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(50, 0, 0);
@@ -81,7 +104,9 @@ public class OptionsBtnPush : MonoBehaviour {
         }
         else if(sc.currentSetting.Equals(sc.settings[2]))
         {
-
+           
         }
     }
+
+   
 }

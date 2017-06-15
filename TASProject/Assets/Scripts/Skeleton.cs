@@ -11,7 +11,7 @@ public class Skeleton : MonoBehaviour {
     public int currentWayPoint = 0;
     GameObject targetWayPoint;
 
-    public float speed = 5f;
+    public float speed = 0.5f;
     public int ranX;
     public int ranY;
     public int ranZ;

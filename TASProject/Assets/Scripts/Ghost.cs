@@ -12,7 +12,7 @@ public class Ghost : MonoBehaviour
     public int currentWayPoint = 0;
     GameObject targetWayPoint;
 
-    public float speed = 2f;
+    public float speed = 0.1f;
     public int ranX;
     public int ranY;
     public int ranZ;

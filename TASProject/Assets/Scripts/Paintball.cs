@@ -33,7 +33,15 @@ public class Paintball : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        selectedColour = (int) GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getPaintballColour();
+        if(GameObject.FindGameObjectWithTag("Settings") != null)
+        {
+            selectedColour = (int)GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().getPaintballColour();
+        }
+        else
+        {
+            selectedColour = 0;
+        }
+        
         selfRend = this.GetComponent<Renderer>();
         selfRend.enabled = true;
         selfRend.sharedMaterial = material[selectedColour];

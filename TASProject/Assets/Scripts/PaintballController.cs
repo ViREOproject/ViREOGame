@@ -19,6 +19,7 @@ public class PaintballController : MonoBehaviour {
     private SteamVR_Controller.Device device;
 
     private SteamVR_TrackedController controller;
+    int index;
 
 
     // Use this for initialization
@@ -28,13 +29,16 @@ public class PaintballController : MonoBehaviour {
         controller.TriggerClicked += TriggerPressed;
         trackedObj = controllerRight.GetComponent<SteamVR_TrackedObject>();
         audio = this.GetComponent<AudioSource>();
+    
+        
+
         
     }
 
     private void TriggerPressed(object sender, ClickedEventArgs e)
     {
         ShootPaintball();
-       
+        SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(2500);
     }
 
     // Update is called once per frame
@@ -47,7 +51,7 @@ public class PaintballController : MonoBehaviour {
     {
         Rigidbody clone = Instantiate(paintball, paintballOrigin.transform.position, paintballOrigin.transform.rotation);
         clone.velocity = transform.forward * paintballForce;
-        
+
         audio.Play();
     }
 
