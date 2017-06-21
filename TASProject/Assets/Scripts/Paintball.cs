@@ -29,6 +29,10 @@ public class Paintball : MonoBehaviour {
     private Vector3 mHitPoint;
     private List<Ray> mRaysDebug = new List<Ray>();
 
+    AudioSource audio;
+    private static int audioInterval = 0;
+    static AudioManager am;
+
 
     // Use this for initialization
     void Start () {
@@ -66,6 +70,7 @@ public class Paintball : MonoBehaviour {
             rend = collision.gameObject.GetComponent<Renderer>();
             rend.enabled = true;
             rend.sharedMaterial = material[selectedColour];
+            playSoundEffect();
             Destroy(collision.gameObject, 1);
         }
         else if (collision.gameObject.tag.Contains(WITCH))
@@ -82,6 +87,7 @@ public class Paintball : MonoBehaviour {
                     r.sharedMaterial = material[selectedColour];
                 }
             }
+            playSoundEffect();
             Destroy(collision.gameObject, 1);
         }
         else if(collision.gameObject.tag.Contains(SKELETON))
@@ -99,6 +105,7 @@ public class Paintball : MonoBehaviour {
                     r.sharedMaterial = material[selectedColour];
                 }
             }
+            playSoundEffect();
             Destroy(collision.gameObject, 1);
         }
         else
@@ -132,13 +139,13 @@ public class Paintball : MonoBehaviour {
             // Raycast around the position to splash everwhere we can
             if (Physics.Raycast(location, fwd, out hit, SplashRange))
             {
-                // Create a splash if we found a surface
-                var paintSplatter = GameObject.Instantiate(PaintPrefab[selectedColour],
-                                                           hit.point,
+            // Create a splash if we found a surface
+            var paintSplatter = GameObject.Instantiate(PaintPrefab[selectedColour],
+                                                       hit.point,
 
-                                                           // Rotation from the original sprite to the normal
-                                                           // Prefab are currently oriented to z+ so we use the opposite
-                                                           Quaternion.FromToRotation(Vector3.back, hit.normal)
+                                                       // Rotation from the original sprite to the normal
+                                                       // Prefab are currently oriented to z+ so we use the opposite
+                                                       Quaternion.Euler(new Vector3(90,0,0))
                                                            ) as Transform;
 
 
@@ -179,7 +186,7 @@ public class Paintball : MonoBehaviour {
             var paintSplatter = GameObject.Instantiate(PaintPrefab[selectedColour],hit.point,
                                                            // Rotation from the original sprite to the normal
                                                            // Prefab are currently oriented to z+ so we use the opposite
-                                                           Quaternion.FromToRotation(Vector3.back, hit.normal)
+                                                           Quaternion.Euler(new Vector3(90, 0, 0))
                                                            ) as Transform;
             paintSplatter.transform.parent = colObj.transform;
 
@@ -193,12 +200,32 @@ public class Paintball : MonoBehaviour {
                     paintSplatter.localScale.z
             );
 
-                
 
 
             // TODO: What do we do here? We kill them after some sec?
             Destroy(paintSplatter.gameObject, 25);
         }
+    }
 
+    private void playSoundEffect()
+    {
+        //Debug.Log("audioInterval = "+audioInterval);
+        audio = (AudioSource)GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>();
+        am = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        if (!audio.isPlaying && audioInterval == 2)
+        {
+            am.playSpecificTrack(18);
+
+        }else if (!audio.isPlaying && audioInterval == 5)
+        {
+            am.playSpecificTrack(19);
+        }
+
+            audioInterval++;
+
+        if(audioInterval > 6)
+        {
+            audioInterval = 0;
+        }
     }
 }

@@ -73,7 +73,7 @@ public class Witch : MonoBehaviour {
             //Check to make sure that it hasn't alreay been hit
             if(!hit)
             {
-                Score_Manager.score += scoreValue;
+                Score_Manager.updateScore(scoreValue);
             }
             //Preventing multiple hits
             hit = true;

@@ -12,6 +12,7 @@ public class Settings : MonoBehaviour {
     public PaintballColour colour;
     public Vector3 ghostScale;
     public Vector3 witchScale;
+    public Vector3 skeletonScale;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +46,16 @@ public class Settings : MonoBehaviour {
     public Vector3 getWitchScale()
     {
         return witchScale;
+    }
+
+    public void setSkeletonScale(Vector3 skeleton)
+    {
+        skeletonScale = skeleton;
+    }
+
+    public Vector3 getSkeletonScale()
+    {
+        return skeletonScale;
     }
 
     public void setPaintballColour(int c)

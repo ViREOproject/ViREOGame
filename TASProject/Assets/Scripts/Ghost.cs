@@ -82,7 +82,7 @@ public class Ghost : MonoBehaviour
             {
                 //Preventing multiple hits
                 hit = true;
-                Score_Manager.score += scoreValue;
+                Score_Manager.updateScore(scoreValue);
             }
             
         }

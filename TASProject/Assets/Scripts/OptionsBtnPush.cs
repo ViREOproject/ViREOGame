@@ -33,10 +33,13 @@ public class OptionsBtnPush : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setGhostScale(GameObject.FindGameObjectWithTag("Ghost").transform.localScale);
             // save witch size
             GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setWitchScale(GameObject.FindGameObjectWithTag("Witch").transform.localScale);
+            // save skeleton size
+            // Set it as half of the witch size
+            GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().setSkeletonScale(GameObject.FindGameObjectWithTag("Witch").transform.localScale/2);
 
             //Move the enemies out of view
-            GameObject.FindGameObjectWithTag("Witch").transform.position += new Vector3(50,0,0);
-            GameObject.FindGameObjectWithTag("Ghost").transform.position += new Vector3(50, 0, 0);
+            GameObject.FindGameObjectWithTag("Witch").transform.position += new Vector3(150,0,0);
+            GameObject.FindGameObjectWithTag("Ghost").transform.position += new Vector3(150, 0, 0);
 
             //Instantiate a paint splatter
             ScaleEnemies.paintSplatter = Instantiate(paintSplatter, new Vector3(47, 0, 14), Quaternion.Euler(new Vector3(90, 0, 0)));
@@ -75,10 +78,6 @@ public class OptionsBtnPush : MonoBehaviour {
             //Update currentSetting last
             sc.currentSetting = sc.settings[2];
         }
-        else if(sc.currentSetting.Equals(sc.settings[2]))
-        {
-          
-        }
     }
 
     public void btnPrevious()
@@ -94,17 +93,13 @@ public class OptionsBtnPush : MonoBehaviour {
             am.audioSource.Stop();
             am.playSpecificTrack(1);
             //Move the enemies into of view
-            GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(50, 0, 0);
-            GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(50, 0, 0);
+            GameObject.FindGameObjectWithTag("Witch").transform.position -= new Vector3(150, 0, 0);
+            GameObject.FindGameObjectWithTag("Ghost").transform.position -= new Vector3(150, 0, 0);
 
             DestroyImmediate(GameObject.FindGameObjectWithTag("PaintSplatter"));
 
             Debug.Log("Previous: paint colour");
             sc.currentSetting = sc.settings[0];
-        }
-        else if(sc.currentSetting.Equals(sc.settings[2]))
-        {
-           
         }
     }
 

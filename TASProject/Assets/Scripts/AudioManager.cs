@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
     public AudioClip[] tracks;
     public AudioSource audioSource;
     public int currentTrack = 0;
+    //use this to stop the last audio track from being called forever
+    public bool hasPlayed = false;
 
     // Use this for initialization
     void Start () {
@@ -15,10 +18,26 @@ public class AudioManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(!audioSource.isPlaying&&currentTrack<1)
+
+        if(SceneManager.GetActiveScene().name.Equals("MainMenu"))
         {
-            playNextTrack();
+            if (!audioSource.isPlaying && currentTrack < 2)
+            {
+                playNextTrack();
+            }
         }
+        else if(SceneManager.GetActiveScene().name.Equals("DevScene"))
+        {
+            if (!audioSource.isPlaying && currentTrack < 2)
+            {
+                playNextTrack();
+            }
+            else if (!audioSource.isPlaying && currentTrack == 2 && !hasPlayed)
+            {
+                CountdownTimer.count = true;
+            }
+        }
+        
 	}
 
     public void playNextTrack()
@@ -31,6 +50,13 @@ public class AudioManager : MonoBehaviour {
     public void playSpecificTrack(int track)
     {
         audioSource.clip = tracks[track];
-        audioSource.PlayDelayed(0.5f);
+        audioSource.PlayDelayed(0.2f);
+        currentTrack = track;
+    }
+
+    public void playSpecificTrackOnce(int track)
+    {
+        audioSource.PlayOneShot(tracks[track]);
+        currentTrack = track;
     }
 }
